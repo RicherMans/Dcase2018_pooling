@@ -1,0 +1,15 @@
+librosa==0.6.2
+tqdm==4.24.0
+fire==0.1.3
+sed_eval==0.2.1
+tableprint==0.8.0
+dcase_util==0.2.5
+kaldi_io==0.9.1
+tabulate==0.8.2
+pandas==0.24.1
+scipy==1.2.1
+torchnet==0.0.4
+torch==0.4.1.post2
+numpy==1.16.2
+scikit_learn==0.20.3
+PyYAML==5.1
