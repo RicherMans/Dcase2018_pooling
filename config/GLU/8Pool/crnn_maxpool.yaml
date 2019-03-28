@@ -1,0 +1,45 @@
+model: CRNN
+features: features/logmel_64/weak.ark
+model_args:
+        bidirectional: True
+        filtersizes: [3,3,3,3,3]
+        filter: [16,32,128,128,128]
+        pooling: [2,2,2,[1,2]]
+        pooltype: MaxPool2d
+        activation: GLU
+labels: labels/train.csv
+outputpath: experiments/MaxPool2d_GLU
+dataloader_args:
+        batch_size: 32
+        num_workers: 1
+        percent: 90
+        over_sample_factor: 1 # N times the usual dataset ( replacement )
+optimizer: Adam
+optimizer_args:
+        lr: 0.001
+        betas: [0.9, 0.999]
+        eps: 0.00000001
+        weight_decay: 0.0
+epochs: 300
+feature_args:
+        cmvn: False
+        delta: False
+        splice: False
+scaler: StandardScaler # Can be any of sklearn.preprocessing that supports fit_partial
+scaler_args:
+        with_std : True
+        with_mean : True        
+improvecriterion: loss # Can also be acc | loss
+saveinterval: 10 #Save every 5 epochs to see what happened
+poolingfunction: linear
+loss: BCELoss # Can also be FocalLoss
+# BCELoss has no args, otherwise FocalLoss can have 'alpha' and 'gamma'
+loss_args: {}
+scheduler: ReduceLROnPlateau
+scheduler_args:
+        mode: min
+        factor: 0.1
+        patience: 10
+        cooldown: 1
+        verbose: False
+        threshold: 0.001
