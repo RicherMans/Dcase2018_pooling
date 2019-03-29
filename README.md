@@ -18,14 +18,18 @@ Results of the paper on the development set (measured in $F_1$ score) are:
 | MixedPooling_learn_alpha | 23.22 | 36    | 32.92 | 31.76 | 24.39 |
 |--------------------------|-------|-------|-------|-------|-------|
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 And on the evaluation set:
 
 |--------------------------|-------|-------|-------|-------|-------|
 | pooltype                 | 0     | 2     | 4     | 8     | 16    |
 |--------------------------|-------|-------|-------|-------|-------|
-| AvgPool2d                | 26.59 | 25.85 | -   | 31.27 | 22.14 |
-| ConvPool                 | -   | 19.95 | 22.46 | 21.13 | 17.07 |
+| AvgPool2d                | 26.59 | 25.85 | -     | 31.27 | 22.14 |
+| ConvPool                 | -     | 19.95 | 22.46 | 21.13 | 17.07 |
 | LPPool2d                 | 23.29 | 27.46 | 30.81 | 28    | 21.65 |
 | MaxPool2d                | 21.98 | 26.01 | 29.74 | 26.16 | 21.5  |
 | MeanMaxPooling           | 24.72 | 29.8  | 25.14 | 28.2  | 21.83 |
@@ -40,6 +44,20 @@ Each value in the row section represents the poolingfactor of the network (e.g.,
 Please see the `requirements.txt` file. Simply install via `pip install -r requirements.txt` or use a conda environment.
 
 Specifically, we use [Kaldi](https://github.com/kaldi-asr/kaldi) as our data format and data processing tool.
+
+## Dataset
+
+The data can be downloaded from the [official dcase2018](https://github.com/DCASE-REPO/dcase2018_baseline) repository. The script can be found in `task4/dataset/download_data.py`.
+
+After successfully downloading the data, please generate a `.scp` file from the dataset, by running something around:
+
+```bash
+for settype in audio/*; do
+  find audio/${settype} -type f -name '*.wav' | awk -F/ '{print $NF,$0}' > ${settype}.scp
+done
+```
+
+Features can then be extracted with the script `feature_extract/extract_lms.py`.
 
 # Running the code
 
