@@ -8,7 +8,6 @@ The Pooling methods in the paper can all be found in the script `pooling.py`.
 
 Results of the paper on the development set (measured in $F_1$ score) are:
 
-|--------------------------|-------|-------|-------|-------|-------|
 | pooltype                 | 0     | 2     | 4     | 8     | 16    |
 |--------------------------|-------|-------|-------|-------|-------|
 | AvgPool2d                | 30.82 | 31.58 | -     | 35.15 | 22.21 |
@@ -16,12 +15,7 @@ Results of the paper on the development set (measured in $F_1$ score) are:
 | LPPool2d                 | 28.82 | 32.3  | 35.34 | 33.14 | 21.97 |
 | MeanMaxPooling           | 30.35 | 35.64 | 27.98 | 31.15 | 20.11 |
 | MixedPooling_learn_alpha | 23.22 | 36    | 32.92 | 31.76 | 24.39 |
-|--------------------------|-------|-------|-------|-------|-------|
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
 And on the evaluation set:
 
