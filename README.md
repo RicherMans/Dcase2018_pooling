@@ -19,7 +19,6 @@ Results of the paper on the development set (measured in $F_1$ score) are:
 
 And on the evaluation set:
 
-|--------------------------|-------|-------|-------|-------|-------|
 | pooltype                 | 0     | 2     | 4     | 8     | 16    |
 |--------------------------|-------|-------|-------|-------|-------|
 | AvgPool2d                | 26.59 | 25.85 | -     | 31.27 | 22.14 |
@@ -28,7 +27,6 @@ And on the evaluation set:
 | MaxPool2d                | 21.98 | 26.01 | 29.74 | 26.16 | 21.5  |
 | MeanMaxPooling           | 24.72 | 29.8  | 25.14 | 28.2  | 21.83 |
 | MixedPooling_learn_alpha | 20.13 | 27.93 | 30.72 | 27.54 | 23    |
-|--------------------------|-------|-------|-------|-------|-------|
 
 
 Each value in the row section represents the poolingfactor of the network (e.g., how many $2$ subsampling pools were done in the time-domain)
