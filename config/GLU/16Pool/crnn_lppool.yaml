@@ -7,7 +7,7 @@ model_args:
         pooling: [2,2,2,2]
         pooltype: LPPool2d
         activation: GLU
-labels: labels/train.csv
+labels: metadata/train/weak.csv
 outputpath: experiments/LPPool2d_GLU
 dataloader_args:
         batch_size: 32

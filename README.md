@@ -6,7 +6,7 @@ This Repo implements the recent work for Interspeech2019.
 
 The Pooling methods in the paper can all be found in the script `pooling.py`.
 
-Results of the paper on the development set (measured in $F_1$ score) are:
+Results of the paper on the development set (measured in F1 score) are:
 
 | pooltype                 | 0     | 2     | 4     | 8     | 16    |
 |--------------------------|-------|-------|-------|-------|-------|
@@ -35,6 +35,27 @@ Each value in the row section represents the poolingfactor of the network (e.g.,
 
 Please see the `requirements.txt` file. Simply install via `pip install -r requirements.txt` or use a conda environment.
 
+Packages are:
+
+```
+librosa==0.6.2
+tqdm==4.24.0
+fire==0.1.3
+sed_eval==0.2.1
+tableprint==0.8.0
+dcase_util==0.2.5
+kaldi_io==0.9.1
+tabulate==0.8.2
+pandas==0.24.1
+scipy==1.2.1
+torchnet==0.0.4
+torch==0.4.1.post2
+numpy==1.16.2
+scikit_learn==0.20.3
+PyYAML==5.1
+```
+
+
 Specifically, we use [Kaldi](https://github.com/kaldi-asr/kaldi) as our data format and data processing tool.
 
 ## Dataset
@@ -50,6 +71,16 @@ done
 ```
 
 Features can then be extracted with the script `feature_extract/extract_lms.py`.
+We recommend putting all the feature files into a dir e.g., `features/logmel_64/weak.ark`, since our defaults for training search for this specific dir. Defaults can be changed by simply passing a `--features` flag.
+After creating the required `.scp` files (at least `weak.scp` and `test.scp`), simply run:
+
+```bash
+for i in weak test; do 
+  python feature_extract/extract_lms.py ${i}.scp features/logmel_64/${i}.ark
+done
+```
+
+Lastly, just softlink the `metadata` directory (given by the challenge) into the current directory.
 
 # Running the code
 
@@ -64,4 +95,12 @@ As one can see in the bottom of `run.py`, the following functions can be utilize
 * traintestindomain: Combination of training and evaluating the model on the original training set + reestimating new labels from the indomain dataset and rerunning training + evaluation
 * runtests: Runs development as well as evaluation tests ( just convenience function )
 * calcthres: A dynamic threshold algorithm (not used in this work)
+
+Most training function can be tweaked on the fly by adding some parameter in `fire` fashion before training. 
+If one e.g., wants to change the poolingfunction for a specific experiment, just pass `--poolingfunction mean` in order to use mean pooling.
+Other arguments which are passed to objects ending with `_args` can be passed in dict faction e.g, `--model_args '{"bidirectional":False, "filters":[1,1,1,1,1]}'`.
+
+All configurations for all experiments can be seen in `config/`. Mainly all configs only differ in their pooling function and their subsampling factor `P`.
+
+
 

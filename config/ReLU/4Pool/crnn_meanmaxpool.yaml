@@ -7,7 +7,7 @@ model_args:
         pooling: [2,2,[1,2],[1,2]]
         pooltype: MeanMaxPooling
         activation: ReLU
-labels: labels/train.csv
+labels: metadata/train/weak.csv
 outputpath: experiments/MeanMaxPooling
 dataloader_args:
         batch_size: 32
