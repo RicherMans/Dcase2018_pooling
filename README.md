@@ -1,8 +1,6 @@
-# Dcase2018 Robust performance via pooling
+# Interspeech2019 - Duration robust sound event detection 
 
-Repo for the DCASE2018 task4 dataset.
-
-This Repo implements the recent work for Interspeech2019. 
+This Repo implements the recent work for (Interspeech2019)[]. 
 
 The Pooling methods in the paper can all be found in the script `pooling.py`.
 
