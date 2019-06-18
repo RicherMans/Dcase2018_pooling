@@ -1,6 +1,6 @@
 # Interspeech2019 - Duration robust sound event detection 
 
-This Repo implements the recent work submitted to [Interspeech2019](
+This Repo implements the recent work seen on [arxiv](
 http://arxiv.org/abs/1904.03841). 
 
 The Pooling methods in the paper can all be found in the script `pooling.py`.
