@@ -1,4 +1,4 @@
-# Interspeech2019 - Duration robust sound event detection 
+# Duration robust sound event detection 
 
 This Repo implements the recent work seen on [arxiv](
 http://arxiv.org/abs/1904.03841). 
