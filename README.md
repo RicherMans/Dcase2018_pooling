@@ -101,5 +101,23 @@ Other arguments which are passed to objects ending with `_args` can be passed in
 
 All configurations for all experiments can be seen in `config/`. Mainly all configs only differ in their pooling function and their subsampling factor `P`.
 
+# Citation
 
+```
+@inproceedings{Dinkel2020,
+archivePrefix = {arXiv},
+arxivId = {1904.03841},
+author = {Dinkel, Heinrich and Yu, Kai},
+journal = {ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+doi = {10.1109/ICASSP40776.2020.9053459},
+eprint = {1904.03841},
+isbn = {978-1-5090-6631-5},
+month = {may},
+pages = {311--315},
+publisher = {IEEE},
+title = {{Duration robust weakly supervised sound event detection}},
+url = {http://arxiv.org/abs/1904.03841},
+year = {2019}
+}
+```
 
