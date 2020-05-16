@@ -1,7 +1,7 @@
 # Duration robust sound event detection 
 
-This Repo implements the recent work seen on [arxiv](
-http://arxiv.org/abs/1904.03841). 
+This Repo implements the recent work for ICASSP2020 seen on [arxiv](
+http://arxiv.org/abs/1904.03841) and [IEEExplore](https://ieeexplore.ieee.org/document/9053459/). 
 
 The Pooling methods in the paper can all be found in the script `pooling.py`.
 
