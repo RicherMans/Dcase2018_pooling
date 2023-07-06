@@ -7,7 +7,7 @@ dcase_util==0.2.5
 kaldi_io==0.9.1
 tabulate==0.8.2
 pandas==0.24.1
-scipy==1.2.1
+scipy==1.10.0
 torchnet==0.0.4
 torch==0.4.1.post2
 numpy==1.16.2
